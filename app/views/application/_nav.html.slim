@@ -1,0 +1,16 @@
+nav.top-bar data-topbar="data-topbar"
+  ul.title-area
+    li.name
+      h1 = link_to "Email Poll", root_path
+       
+    li.toggle-topbar.menu-icon
+      a href="#"
+        span Menu
+
+  section.top-bar-section
+    ul.right
+      - if user_signed_in?
+        li = link_to "Dashboard", root_path
+        li = link_to "Logout", logout_path
+      - else
+        li = link_to "Login", login_path
