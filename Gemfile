@@ -8,6 +8,27 @@ gem 'quiet_assets', group: :development
 gem 'cancancan', '~> 1.10'
 gem 'html2slim'
 
+group :development do
+  gem 'rack-livereload'
+end
+
+group :test do
+  #gem 'guard-livereload'
+  #gem 'guard-delayed'
+  #gem "launchy"
+  #gem "chromedriver-helper"
+  #gem 'cucumber-rails', :require => false
+  #gem 'guard-cucumber'
+  gem "spork", "~> 1.0rc"
+  gem "guard-spork"
+  gem "guard-rspec"
+  gem "rspec-rails", '~> 3.0'
+  gem "capybara"
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'simplecov', :require => false
+  gem 'database_cleaner'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
