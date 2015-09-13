@@ -1,0 +1,11 @@
+h1 All Polls
+
+= link_to 'New Poll', new_poll_path 
+
+table
+  tr
+    th Name
+  - @polls.each do |poll|
+    tr
+    td= poll.name
+    
