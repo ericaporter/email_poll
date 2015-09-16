@@ -8,4 +8,6 @@ table
   - @polls.each do |poll|
     tr
     td= poll.name
+    td= link_to 'Show', poll_path(poll)
+    td= link_to 'Destroy', poll_path(poll), method: :delete, data: { confirm: 'Are you sure?'}
     
