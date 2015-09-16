@@ -1,5 +1,8 @@
-= simple_form_for :poll, url: polls_path do |f|
+= simple_form_for @poll do |f|
   = f.input :name, label: "Poll Name"
+  = f.fields_for :options do |builder|
+    = render "option_fields", f: builder
+  
+  p = link_to_add_fields "+ Add voting option", f, :options, 'button small secondary'
   = f.button :submit
 
-//why use :poll and not @poll

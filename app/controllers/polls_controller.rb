@@ -16,13 +16,13 @@ class PollsController < ApplicationController
 
   #new
   def new
-    @polls = Poll.new
+    @poll = Poll.new
   end
   def create
     @poll = Poll.new(poll_params)
 
     if @poll.save
-      redirect_to @poll
+       redirect_to @poll
     else
       render 'new'
     end
@@ -36,7 +36,7 @@ class PollsController < ApplicationController
 
 private 
   def poll_params
-      params.required(:poll).permit(:name)
+    params.required(:poll).permit(:name)
   end
 
 
