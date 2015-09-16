@@ -10,8 +10,8 @@ nav.top-bar data-topbar="data-topbar"
   section.top-bar-section
     ul.right
       - if user_signed_in?
-        li = link_to "Dashboard", root_path
-        li = link_to "Logout", logout_path
+        li = link_to "Dashboard", polls_path
         li = link_to "New Poll", new_poll_path
+        li = link_to "Logout", logout_path  
       - else
         li = link_to "Login", login_path
