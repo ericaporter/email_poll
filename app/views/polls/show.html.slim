@@ -1,7 +1,9 @@
 h1 
 .row
   = @poll.name
+  ul
+  - @poll.options.each do |option|
+   li = option.name
 
 = link_to 'Back', polls_path
-
 

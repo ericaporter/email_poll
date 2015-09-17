@@ -40,7 +40,7 @@ class PollsController < ApplicationController
 
 private 
   def poll_params
-    params.required(:poll).permit(:name)
+    params.required(:poll).permit(:name, options_attributes: [:name, :_destroy])
   end
 
 
