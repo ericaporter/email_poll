@@ -1,9 +1,17 @@
+- html_form_string = render 'clipboard_form', poll: @poll
 h1 
 .row
-  = @poll.name
-  ul
-  - @poll.options.each do |option|
-   li = option.name
+  .medium-6.columns
+    = @poll.name
+    ul
+    - @poll.options.each do |option|
+     li = option.name
+  .medium-6.columns
+    b Preview:
+    p = html_form_string.html_safe
+    = simple_form_for '/' do |f|
+      = f.input :copy_me, as: :text, input_html: {value: html_form_string, rows: 30}
 
 = link_to 'Back', polls_path
+
 

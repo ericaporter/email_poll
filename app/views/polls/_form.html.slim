@@ -1,4 +1,4 @@
-= simple_form_for @poll do |f|
+= simple_form_for poll do |f|
   = f.input :name, label: "Poll Name"
   = f.fields_for :options do |builder|
     = render "option_fields", f: builder
