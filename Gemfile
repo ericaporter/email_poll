@@ -7,6 +7,8 @@ gem 'foundation-rails'
 gem 'quiet_assets', group: :development
 gem 'cancancan', '~> 1.10'
 gem 'html2slim'
+gem 'omniauth', '1.2.2'
+gem 'omniauth-facebook', '2.0.1'
 
 group :development do
   gem 'rack-livereload'

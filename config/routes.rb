@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
 
-  resources :polls
   
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,6 +9,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root to: "static_pages#home"
+
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+  resources :users, only: [:index, :show]
+  resources :polls
+
   devise_scope :user do
     get "login", to: "devise/sessions#new"
     get "logout", to: "devise/sessions#destroy"
